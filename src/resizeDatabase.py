@@ -2,14 +2,14 @@ from PIL import Image
 import os
 
 INPUT_FOLDER = '../DataBase/flowers/'
-OUTPUT_FOLDER = '../DataBase/scaledFlowers/flowers'
+OUTPUT_FOLDER = '../DataBase/scaledFlowersVerySmall/flowers'
 
 allFiles = os.listdir(INPUT_FOLDER)
 step = int(round(len(allFiles) / 100))
 
 for index,file in enumerate(allFiles):
     img = Image.open(os.path.join(INPUT_FOLDER,file))
-    newImg = img.resize((400,400))
+    newImg = img.resize((25,25))
     newImg.save(os.path.join(OUTPUT_FOLDER,file))
 
     #Print progression
